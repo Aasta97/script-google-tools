@@ -1,4 +1,3 @@
-# Imports the Google Cloud client library
 from google.cloud import storage
 
 
@@ -7,10 +6,8 @@ class Google:
         # Instanciar cliente
         self.storage_client = storage.Client()
 
-    def create_new_bucket(self):
-        # Setar nome do bucket
+    def create_new_bucket(self, bucket_name):
         # O nome do bucket é global e precisa ser um nome que nunca foi utilizado
-        bucket_name = "suridatateste"
         # Criar novo bucket
         bucket = self.storage_client.create_bucket(bucket_name)
 
@@ -32,6 +29,6 @@ class Google:
 
 
 google = Google()
-# google.create_new_bucket()
-# google.upload_file("suridatateste", "teste.txt")
-# google.list_files("suridatateste")
+# google.create_new_bucket("meunomedebucketteste")
+# google.upload_file("meunomedebucketteste", "teste.txt")
+# google.list_files("meunomedebucketteste")
